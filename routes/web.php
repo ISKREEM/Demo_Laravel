@@ -22,3 +22,18 @@ Route::get('contact', ['as' => 'contact', 'uses' => 'PageController@contact']);
 // 
 Route::get('item', ['as' => 'item', 'uses' => 'PageController@shopitem']);
 Route::get('shop', ['as' => 'shop', 'uses' => 'PageController@shoppage']);
+
+Route::get('login', 'Auth\LoginController@showLoginForm');
+Route::post('login', 'Auth\LoginController@login');
+Route::get('logout', 'Auth\LoginController@logout');
+
+// Route::get('test', function () {
+//     $user = new App\User;
+//     $user->name = 'Admin';
+//     $user->email = 'admin@admin.com';
+//     $user->password = bcrypt('admin');
+
+
+//     $user->save();
+//     return $user;
+// });

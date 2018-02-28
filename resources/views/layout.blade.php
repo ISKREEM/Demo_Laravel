@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/css/app.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Shop - Laravel 5.6</title>
 </head>
 <body>
@@ -36,6 +37,30 @@
                     <li class="nav-item {{activeMenu('shop')}}">
                         <a class="nav-link" href="{{route('shop')}}">Shop page</a>
                     </li>
+                    {{-- //login section --}}
+
+                    @if (auth()->guest())
+                    <li class="nav-item {{activeMenu('login')}}">
+                        <a class="nav-link" href="/login">Sign in</a>
+                    </li>
+                    @endif
+
+                    @if (auth()->check())
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Options</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Sign in as {{ auth()->user()->name}}</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Your profile</a>
+                            <a class="dropdown-item" href="#">Your orders</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Help</a>
+                            <a class="dropdown-item" href="#">Settings</a>
+                            <a class="dropdown-item" href="/logout">Sign out</a>
+                        </div>
+                    </li>
+                    @endif
+
                 </ul>
             </div>
         </div>
