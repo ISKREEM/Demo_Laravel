@@ -13,10 +13,10 @@
         <div class="col-md-3"></div>
         <div class="col-md-6">
             <div class="form-group has-danger">
-                <label class="sr-only" for="email">E-Mail Address</label>
+                <label class="sr-only" for="usEmail">E-Mail Address</label>
                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
-                    <input type="text" name="email" class="form-control" id="email" placeholder="you@example.com" required autofocus>
+                    <input type="text" name="usEmail" class="form-control" id="email" placeholder="you@example.com" required autofocus>
                 </div>
             </div>
         </div>
